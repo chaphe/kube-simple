@@ -1,11 +1,6 @@
 # kube-simple
 
 ### install hyperhit and minikube
-`brew update`
-
-`brew install hyperkit`
-
-`brew install minikube`
 
 `kubectl`
 
@@ -13,6 +8,8 @@
 
 ### create minikube cluster
 `minikube start --vm-driver=hyperkit`
+
+`minikube start`
 
 `kubectl get nodes`
 
