@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpine-pvc-depl
+  labels:
+    app: alpine-pvc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alpine-pvc
+  template:
+    metadata:
+      labels:
+        app: alpine-pvc
+    spec:
+      containers:
+        - name: alpine
+          image: alpine:3.15
+          command: [ "/bin/sh", "-c", "--" ]
+          args: [ "while true; do sleep 30; done;" ]
+          volumeMounts:
+            - name: mypd
+              mountPath: /data
+      volumes:
+        - name: mypd
+          persistentVolumeClaim:
+            claimName: pvc-test
