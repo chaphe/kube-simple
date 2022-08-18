@@ -25,7 +25,7 @@ spec:
       volumes:
         - name: mypd
           persistentVolumeClaim:
-            claimName: pvc-test
+            claimName: pvc-microk8s-hps
 ---
 apiVersion: v1
 kind: Service
