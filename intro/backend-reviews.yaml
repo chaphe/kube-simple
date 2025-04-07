@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend-reviews
-        image: chaphe/backend-reviews-image:simple
+        image: chaphe/backend-reviews-image:1.1
         ports:
         - containerPort: 3000
 ---
